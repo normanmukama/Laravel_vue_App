@@ -1,0 +1,236 @@
+.light-table-theme{
+    display: table;
+    width: 100%;
+    /* border: 1px solid #000; */
+    /* border-radius: 1rem 1rem 1rem 1rem; */
+    border-collapse: collapse;
+    empty-cells: show;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.light-thead-theme{
+    border-bottom: 1px solid;
+    background: rgb(150, 133, 143, 0.9);
+}
+
+.light-tbody-theme{
+    border-bottom: 1px solid #9099A2;
+    max-width: 600px;
+    overflow-x: auto;
+}
+
+.light-input-theme{
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+
+.light-input-theme::placeholder{
+    color: white;
+    text-overflow: ellipsis;
+}
+.light-input-theme:focus{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 100%;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+
+td{
+
+}
+
+th{
+
+}
+
+/* especificos */
+table > thead{
+}
+
+table > thead > tr{
+}
+
+table tbody tr{
+    /* background-color: rgb(255, 255, 255); */
+}
+
+table > thead > tr > th{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    white-space: normal;
+    font: normal 1px #fff
+}
+
+
+table > tbody > tr > td{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-left: 1px solid #9099A2;
+    border-right: 1px solid #9099A2;
+}
+
+/* funciones */
+table tbody tr:nth-child(even){ background: rgb(144, 153, 162, 0.5); }
+
+table tbody tr:nth-child(odd){/* background-color: gray; */ }
+
+table > tbody > tr:hover{
+    background: #d5d5d5;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .light-table-theme{
+        table-layout: auto;
+    }
+
+    .light-thead-theme{
+        background: rgba(118, 51, 90, 0.9);
+    }
+    .light-tbody-theme{
+        overflow-x: scroll;
+    }
+    table > thead > tr > th{
+        /* padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+        white-space: nowrap; */
+    }
+
+    table > tbody > tr > td{
+        /* padding: 0.2rem 0.2rem 0.2rem 0.2rem; */
+        /* white-space: break-spaces; */
+    }
+
+    .input{
+        /* padding: 8px;
+        display: block;
+        border: none;
+        border-bottom: 1px solid #ccc; */
+        width:100%;
+    }
+}
+
+select {
+    margin-bottom: 1em;
+    padding: .25em;
+    border: 0;
+    border-bottom: 2px solid currentcolor; 
+    font-weight: bold;
+    letter-spacing: .15em;
+    border-radius: 0;
+    &:focus, &:active {
+        outline: 0;
+        border-bottom-color: red;
+    }
+}
+
+/* paginator */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #cbe0dd;
+    color: #2d4848;
+}
+ul {
+    list-style-type: none;
+}
+.items-list {
+    max-width: 90vw;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3rem;
+    justify-content: center;
+    align-content: center;
+}
+@media only screen and (max-width: 600px) {
+    .items-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.item {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2d4848;
+    cursor: pointer;
+}
+.item span {
+    background: #ffffff;
+    box-shadow: 0 0.8rem 2rem rgba(90, 97, 129, 0.05);
+    border-radius: 0.6rem;
+    padding: 2rem;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+.item:hover span {
+    transform: scale(1.2);
+    color: #23adad;
+}
+.item p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #23adade1;
+}
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    margin: 3rem;
+    /* border: solid 1px; */
+    border-radius: 0.6rem;
+    background: #ffffff;
+    box-shadow: 0 0.8rem 2rem rgba(90, 97, 129, 0.05);
+}
+.page__numbers, .page__btn, .page__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.page__dots {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: #23adade1;
+    cursor: initial;
+}
+.page__numbers {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.4rem;
+}
+.page__numbers:hover {
+    color: #23adad;
+}
+.page__numbers.active {
+    color: #ffffff;
+    background: #23adad;
+    font-weight: 600;
+    border: 1px solid #23adad;
+}
+.page__btn {
+    color: #23adade1;
+    pointer-events: none;
+}
+.page__btn.active {
+    color: #2d4848;
+    pointer-events: initial;
+}
+.page__btn.active:hover {
+    color: #23adad;
+}
+/* fin del paginator */
